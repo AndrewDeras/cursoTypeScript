@@ -76,16 +76,16 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   let formErrors = false;
 
-  formFields.forEach((field) => {
+  for (let i = 0; i < formFields.length; i++) {
+    const field = formFields[i];
+    if (formErrors) return;
     if (field.classList.contains('show-error-message')) {
       formErrors = true;
-      return;
-    } else {
-      formErrors = false;
     }
-  });
-
-  if (!formErrors) {
-    form.submit();
   }
+  if (formErrors) {
+    return;
+  }
+
+  form.submit();
 });
