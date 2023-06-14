@@ -20,6 +20,15 @@ export class Person {
 }
 
 export class Student extends Person {
+  constructor(
+    name: string,
+    lastName: string,
+    age: number,
+    cpf: string,
+    public room: string,
+  ) {
+    super(name, lastName, age, cpf);
+  }
   getFullName(): string {
     return `Student: ${this.name} ${this.lastName}`;
   }
@@ -31,9 +40,7 @@ export class Client extends Person {
   }
 }
 
-const student = new Student('Andrew', 'Deras', 25, 'hadshjkas');
-const person = new Person('Andrew', 'Deras', 25, 'hadshjkas');
-const client = new Client('Andrew', 'Deras', 25, 'hadshjkas');
-console.log(person.getFullName());
-console.log(student.getFullName());
-console.log(client.getFullName());
+const student = new Student('Andrew', 'Deras', 25, 'hadshjkas', '3002');
+// const person = new Person('Andrew', 'Deras', 25, 'hadshjkas');
+// const client = new Client('Andrew', 'Deras', 25, 'hadshjkas');
+console.log(student);
